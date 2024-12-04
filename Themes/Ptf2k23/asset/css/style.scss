@@ -1,0 +1,46 @@
+//Colors
+
+$primary: #EB4B98;
+$secondary: #043565; 
+$info: #5158BB; 
+$success: #22DCE9; 
+ $light: #F7F7F7; // 94B0B3
+$warning: #F26DF9; // Fourth
+$body-bg: #FAFAFA; 
+$dark: #043565; // Same as primary Color 
+
+
+
+
+//Font 
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Poppins:wght@100&family=Righteous&family=Seymour+One&display=swap');
+$font-family-sans-serif: 'Alata', sans-serif;  
+$font-size-base: 1rem; 
+$h1-font-size: 4rem; 
+$h2-font-size: 2rem; 
+$h3-font-size: 1.875rem; 
+$h4-font-size: 1.75rem;
+$h5-font-size: 1.563rem;
+$h6-font-size: 1.25rem;
+
+
+//Components
+
+//card
+$card-box-shadow: 0px 7px 4px rgba(0, 0, 0, 0.25);
+$card-border-color: none; 
+$card-border-radius: 73px; 
+$card-bg: #FFFF; 
+
+//btn
+$btn-border-radius: 305px ; 
+
+
+
+
+
+
+
+@import "bootstrap/bootstrap";
+@import "partials/forms"; 
+@import "partials/card";

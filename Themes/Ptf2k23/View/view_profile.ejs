@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partage ta fiche | Profil de <%= user.username %></title>
+    <%- include(theme_header +'/header_css') %> 
+    <%- include(theme_header +'/header_js') %> 
+</head>
+<body>
+    <%- include(theme_header +'/nav') %> 
+
+    <section class="main">
+
+        <div class="container">
+
+            <div class="mx-auto text-center">
+                <h1><%= user.username %></h1>
+                <img src="<%= img %>" alt="Photo de profil de <%= user.username %>" width="200" height="200" class="img-fluid">
+
+                <div class="pt-3">
+                    <p><%= user.description %></p>
+
+                </div>
+
+            </div>
+            <div class="pt-3">
+                <h2>Ces fiches publiées : </h2>
+
+            </div>
+
+            <div class="row">
+                <% fiche.forEach(fiche => { %>
+                    <div class=" col-12 col-lg-4 mt-5 mt-lg-0 p-5 ">
+                      <div class="card card-body align-items-center">
+                        <h5 class="p-2 text-center"><%= fiche.title %></h5>
+                        <img src="/public/upload/img/fiche/<%= fiche.file %>.png" alt="" class="img-fluid">
+                        <div class="p-3 text-center"><a href="/fiche/view/<%= fiche.id %>" class="btn btn-secondary"> Voir la fiche</a></div>
+                        
+            
+                      </div>
+                      </div>
+        
+                   
+                  <% }) %>
+
+            </div>
+
+        </div>
+
+
+    </section>
+    
+    <%- include(theme_header +'/footer') %> 
+   
+    
+    
+</body>
+</html>

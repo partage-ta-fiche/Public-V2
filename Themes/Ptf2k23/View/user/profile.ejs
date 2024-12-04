@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partage ta fiche | Profil</title>
+    <%- include(theme_header +'/header_css') %> <%- include(theme_header
+    +'/header_js') %>
+  </head>
+  <body>
+    <%- include(theme_header +'/nav') %>
+    <script src="/Themes/Ptf2k23/asset/js/categorie.js"></script>
+
+    <section class="main pt-5 mt-5 p-3">
+      <h1 class="fs-2">Bonjour <%= req.session.username %></h1>
+
+      <div class="container row">
+        <div class="card card-body">
+          <h1 class="fs-3 px-4">Publier une nouvelle fiche</h1>
+          <div class="p-3 w-auto">
+            <form
+              action="/fiche/post"
+              method="post"
+              enctype="multipart/form-data">
+              <div class="mb-3 w-50">
+                <label for="title" class="form-label">Titre de la Fiche</label>
+                <input
+                  type="text"
+                  class="form-control bg-info"
+                  id="title"
+                  name="title" />
+              </div>
+              <div class="mb-3 w-50">
+                <label for="desc" class="form-label">Description</label>
+                <textarea
+                  class="form-control bg-info"
+                  name="desc"
+                  id="desc"
+                  rows="3"></textarea>
+              </div>
+              <div class="mb-3 w-50">
+                <label for="fiche" class="form-label">Votre fichier</label>
+                <input
+                  type="file"
+                  name="file"
+                  id="fiche"
+                  onchange="previewImage(event)"
+                  simple
+                  accept="image/*"
+                  class="form-control" />
+              </div>
+
+              <div class="mb-3">
+                <img
+                  id="preview"
+                  src="#"
+                  style="display: none"
+                  alt="Prévisualisation de l'image"
+                  class="img-fluid" />
+              </div>
+              <div class="mb-3 w-50">
+                <label for="categorie" class="form-label">Matière</label>
+                <select name="categorie" id="categorie" class="form-control">
+
+                </select>
+
+              </div>
+              <div class="mb-3 w-50">
+                <label for="classe" class="form-label">Classe</label>
+                <select name="classe" id="classe" class="form-control">
+
+                </select>
+
+              </div>
+             <div class="mb-3 w-50">
+                <input
+                  type="submit"
+                  value="Partager"
+                  class="btn btn-warning w-100" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="container row pt-5">
+        <div class="col-12"></div>
+
+        <div class="col-12 col-lg-6">
+          <a
+            href="#"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#paramsmodal"
+            >Paramètres du compte</a
+          >
+        </div>
+        
+        <div class="col-12 col-lg-6 pt-2">
+          <a href="/fiche/user/<%= req.session.userID %>" class="btn btn-secondary">Voir mon Profil</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="paramsmodal"
+      tabindex="-1"
+      aria-labelledby="Paramètre du Compte"
+      aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Paramètre du compte
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container row">
+              <div class="col-12 col-lg-12">
+                <h3>Changer mes informations</h3>
+                <form action="/user/modify/username" method="post">
+                  <div class="mb-3">
+                    <label for="username" class="form-label"
+                      >Nom d'utilisateur</label
+                    >
+                    <input
+                      type="text"
+                      name="username"
+                      id="username"
+                      value="<%= req.session.username %>"
+                      class="form-control" />
+                  </div>
+                  <input
+                    type="submit"
+                    value="Modifier"
+                    class="btn btn-primary" />
+                </form>
+                <form action="/user/modify/pasword" method="post" class="pt-2">
+                  <h4 class="fs-5">Changer le mot de passe</h4>
+                  <div class="mb-3">
+                    <label for="username" class="form-label"
+                      >Ancien mot de passe</label
+                    >
+                    <input
+                      type="password"
+                      name="apassword"
+                      id="username"
+                      value=""
+                      class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="username" class="form-label"
+                      >Nouveau mot de passe</label
+                    >
+                    <input
+                      type="password"
+                      name="npassword"
+                      id="username"
+                      value=""
+                      class="form-control" />
+                  </div>
+                  <input
+                    type="submit"
+                    value="Modifier"
+                    class="btn btn-primary" />
+                </form>
+              </div>
+              <div class="col-12 col-lg-12">
+                <h3>Modifier ma photo de profil</h3>
+
+                <form
+                  action="/user/modify/pp"
+                  method="post"
+                  enctype="multipart/form-data">
+                  <input
+                    type="file"
+                    name="file"
+                    id="Img"
+                    onchange="previewPPImage(event)"
+                    class="form-control"
+                    accept="image/*" />
+                  <br /><br />
+
+                  <img
+                    src="<%= req.session.ppfile %>"
+                    alt="Photo de profile"
+                    class="img-fluid"
+                    id="previewpp" />
+
+                  <div class="pt-5">
+                    <input
+                      type="submit"
+                      value="Modifier"
+                      class="btn btn-primary" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Fermer les paramètres
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include(theme_header +'/footer') %>
+  </body>
+</html>

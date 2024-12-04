@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partage ta fiche</title>
+    <%- include(theme_header +'/header_css') %> 
+    <%- include(theme_header +'/header_js') %> 
+    <script src="/Themes/Ptf2k23/asset/js/view.js"></script>
+    <script src="/Themes/Ptf2k23/asset/js/stats.js"></script>
+</head>
+<body>
+    <%- include(theme_header +'/nav') %> 
+
+    <section class="main container pt-5 mt-5">
+
+        <div class="text-center">
+          <h1>
+            Bonjour et bienvenue sur <br />
+            Partage ta Fiche
+          </h1>
+        </div>
+        <div class="container row pt-5">
+          <div class="col-12"><h3>Il y a actuellement :</h3></div>
+  
+          <div class="col-12 col-lg-6 pt-5">
+            <div class="card card-body">
+              <i class="bi bi-person-fill fs-1 text-center text-primary"></i>
+              <h2 class="mt-2 text-center"><div id="stats_user">No number</div> utilisateurs</h2>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 pt-5">
+            <div class="card card-body">
+              <i
+                class="bi bi-file-earmark-fill fs-1 text-center text-primary"></i>
+              <h2 class="mt-2 text-center"><div id="stats_fiche">No number</div> fiches</h2>
+            </div>
+          </div>
+        </div>
+  
+        <div class="container">
+          
+          
+          </div>
+          
+          
+  
+        </div>
+      </section>
+    
+    <%- include(theme_header +'/footer') %> 
+   
+    
+    
+</body>
+</html>

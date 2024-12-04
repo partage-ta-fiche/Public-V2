@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partage ta fiche </title>
+    <%- include(theme_header +'/header_css') %> 
+    <%- include(theme_header +'/header_js') %> 
+</head>
+<body>
+    <%- include(theme_header +'/nav') %> 
+
+    <section class="main pt-5 mt-5">
+        <div class="d-flex w-auto p-lg-5 justify-content-lg-center mx-auto ">
+            <div class="card card-body w-lg-25 ">
+                <form action="/user/login" method="post">
+                    <div class="mb-3">
+                        <label for="email" class="form-label px-4">Email</label>
+                        <input type="email" name="email" class="form-control" id="email">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label px-4">Mot de passe</label>
+                        <input type="password" name="password" id="password" class="form-control">
+
+                    </div>
+                    
+                   
+                        <input type="submit" name="Se connecter" class="btn btn-secondary" value="Se connecter">
+
+                    
+                    
+                    <div class="mb-3 px-4">
+                        <a href="/user/create">Je n'ai pas de compte</a>
+
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+
+    </section>
+    <%- include(theme_header +'/footer') %> 
+   
+    
+    
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+    "pm2 name app": "Partage",
+
+    
+    "app_port": 8080,
+    "db_host": "localhost",
+    "db_user": "",
+    "db_password": "",
+    "db_name": "",
+
+    "theme": "Ptf2k23",
+    "website_url": "https://partage-ta-fiche.fr" ,
+
+    "update_key": "c73a3747-70d6-4461-90f8-fad72ac3ffc3"
+}

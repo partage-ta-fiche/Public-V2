@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partage ta fiche | <%= fiche.title %></title>
+    <%- include(theme_header +'/header_css') %> 
+    <%- include(theme_header +'/header_js') %> 
+</head>
+<body>
+    <%- include(theme_header +'/nav') %> 
+   <section class="main">
+
+    <div class="container row justify-content-lg-between mx-auto ">
+        <div class="col-12 col-lg-6 ">
+
+            <img src="/public/upload/img/fiche/<%= fiche.file %>.png" alt="Fiche de révision <%= fiche.title %>" class="img-fluid">
+        </div>
+        <div class="col-12 col-lg-6 p-3">
+
+            <div class="card card-body align-items-center">
+                <h1 class="fs-2 text-center"><%= fiche.title %></h1>
+                <p class="p-2"><%= fiche.description %></p>
+                <div class="pt-5  text-center">
+                    <h2>Réalisé par <%= fiche.author %></h2>
+                    <img src="<%= img %>" alt="Photo de profile de <%= fiche.author %>"  width="50" height="50" >
+                    <div class="pt-2">
+                        <a href="/fiche/user/<%= fiche.authorID %>" class="btn btn-primary">Voir plus de <%= fiche.author %> </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+   </section>
+    <%- include(theme_header +'/footer') %> 
+   
+    
+    
+</body>
+</html>

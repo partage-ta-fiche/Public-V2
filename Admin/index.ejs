@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrateur | Isis CMS</title>
+    <%- include('../Admin/asset/components/header') %> 
+  <body>
+    <%- include('../Admin/asset/components/nav') %> 
+    
+
+    <div class="container  mt-5">
+        <h1 class="text-center">Bienvenue <%= req.session.username %> </h1>
+      <h2>Statistiques</h2>
+      <div class="row justify-content-between">
+        <div class="col-12 col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <i class="bi bi-person" width="128" height="128"></i>
+              <p><%= user %> utilsateurs</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="card card-body">
+            <i class="bi bi-file-earmark-fill"></i>
+            <p><%= docs %> documents</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

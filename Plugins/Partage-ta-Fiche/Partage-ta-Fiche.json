@@ -1,0 +1,7 @@
+{
+    "name": "Partage-ta-Fiche", 
+    "route": "/fiche",
+    "controllerPath": "./Controllers.js",
+    "admin_controllerPath": "./Controllers.js",
+    "version": "1.6.0"
+}

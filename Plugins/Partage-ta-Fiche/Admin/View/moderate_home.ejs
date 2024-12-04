@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrateur | Isis CMS</title>
+    <%- include('../../../../Admin/asset/components/header') %> 
+  <body>
+    <%- include('../../../../Admin/asset/components/nav') %> 
+    
+
+    <div class="container  mt-5 pt-5">
+        
+      <h2>Modération de la fiche</h2>
+      <div class="row">
+        <div class="col-12">
+          <form action="/admin/fiche/moderate" method="post">
+            <div class="mb-3">
+              <label for="select">Id de la fiche à visualiser</label>
+              <input type="number" class="form-control" name="fiche_id" id="select">
+
+            </div>
+            <div class="mb-3">
+              <input type="submit" value="Visualiser" class="btn btn-primary">
+
+            </div>
+          </form>
+
+        </div>
+        <div class="col-12">
+          <h2>Listes des fiches signalés : </h2>
+          <div class="alert alert-info" role="alert">
+            Fonctionalité pas encore déployé 
+          </div>
+
+        </div>
+
+      </div>
+
+     
+      
+        
+        
+
+     </div>
+  </body>
+</html>

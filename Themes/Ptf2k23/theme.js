@@ -1,0 +1,14 @@
+exports.theme_name = "Partage ta fiche 2k23"
+exports.author = "Partage ta fiche"
+exports.asset_path = __dirname + '/asset/'
+exports.view_path = __dirname + '/View/mainview'
+exports.index = __dirname + '/View/index'
+exports.login_path = __dirname + '/View/user/login'
+exports.create_path = __dirname + '/View/user/create'
+exports.profil = __dirname + '/View/user/profile'
+exports.fiche = __dirname + '/View/fiche'
+exports.view_profile = __dirname +'/View/view_profile'
+exports.header = __dirname + '/asset/components'
+exports.error_path = __dirname + '/View/error.ejs'
+exports.search = __dirname + '/View/search.ejs'
+exports.search_view =  __dirname + '/View/search_result.ejs'

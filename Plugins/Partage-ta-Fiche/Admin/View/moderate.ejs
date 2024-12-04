@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrateur | Isis CMS</title>
+    <%- include('../../../../Admin/asset/components/header') %> 
+  <body>
+    <%- include('../../../../Admin/asset/components/nav') %> 
+    
+
+    <div class="container row justify-content-lg-between mx-auto pt-5 mt-5 ">
+        <div class="col-12 col-lg-6 ">
+
+            <img src="/public/upload/img/fiche/<%= fiche.file %>.png" alt="Fiche de révision <%= fiche.title %>" class="img-fluid">
+        </div>
+        <div class="col-12 col-lg-6 p-3">
+
+            <div class="card card-body align-items-center">
+                <h1 class="fs-2 text-center"> <strong>Titre : </strong><%= fiche.title %></h1>
+                <p class="p-2"> <strong>Description : </strong><%= fiche.description %></p>
+                <div class="pt-5  text-center">
+                    <h2><strong>Auteur :</strong> <%= fiche.author %></h2>
+                    
+                    <div class="pt-2">
+                        <a href="/admin/fiche/delete/<%= fiche.id %>" class="btn btn-danger">Supprimer la fiche</a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+  </body>
+</html>
